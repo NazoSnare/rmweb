@@ -33,33 +33,29 @@ export const config = {
   children: [],
 };
 
-export const data = {
-  content: {
-    body: [
-      {
-        id: 'X1JAfdsZxy89',
-        component: 'TopBar',
-      },
-      {
-        id: 'X1JAfdxe3sZxy',
-        component: 'Divider',
-      },
-      {
-        id: 'X1JAfwwwedsZxy',
-        component: 'BannerSection',
-      },
-      {
-        id: 'X1JAfiuydsZxy',
-        component: 'FloatingSection',
-      },
-      {
-        id: 'X1JAfxxxxdsZxy',
-        component: 'ArticlesSection',
-      },
-      {
-        id: 'X1JAfdsZ8777xy',
-        component: 'EditionsSection',
-      },
-    ],
+export const data = [
+  {
+    id: 'X1JAfdsZxy89',
+    component: 'TopBar',
   },
-};
+  {
+    id: 'X1JAfdxe3sZxy',
+    component: 'Divider',
+  },
+  {
+    id: 'X1JAfwwwedsZxy',
+    component: 'BannerSection',
+  },
+  {
+    id: 'X1JAfiuydsZxy',
+    component: 'FloatingSection',
+  },
+  {
+    id: 'X1JAfxxxxdsZxy',
+    component: 'ArticlesSection',
+  },
+  {
+    id: 'X1JAfdsZ8777xy',
+    component: 'EditionsSection',
+  },
+];

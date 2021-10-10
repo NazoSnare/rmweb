@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   // BannerSection,
   // Divider,
@@ -8,17 +8,23 @@ import {
   // ArticlesSection,
   // EditionsSection,
 } from '../Components';
-
-import {data} from '../Utils/mock/';
 import createComponent from '../Utils/createComponent/index';
 import {RootStore} from '../Utils/redux/store';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {GetCMS} from '../Utils/redux/actions/cms.actions';
 
 const LandingPage: React.FC = () => {
-  const serverContent = useSelector((state: RootStore) => state.articles);
-  const cmsContent = useSelector((state: RootStore) => state.cms);
-  console.log('server content', serverContent);
-  console.log('cms server content', cmsContent);
+  const articles = useSelector((state: RootStore) => state.articles);
+  const cmsState = useSelector((state: RootStore) => state.cms);
+  const dispatch = useDispatch();
+
+  /**
+   * No dependcy so that it always fetches the latest layout
+   */
+  useEffect(() => {
+    dispatch(GetCMS());
+  });
+
   return (
     <Page>
       {/* <TopBar />
@@ -27,7 +33,11 @@ const LandingPage: React.FC = () => {
       <FloatingSection />
       <ArticlesHeading />
       <EditionsSection /> */}
-      {data.content.body.map((c) => createComponent(c))}
+      {cmsState.loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        cmsState?.cms.map((c) => createComponent(c))
+      )}
     </Page>
   );
 };

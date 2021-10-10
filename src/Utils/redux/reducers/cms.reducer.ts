@@ -1,13 +1,14 @@
+import {data} from '../../mock';
 import {CMSActionTypes, cmsActionTypes} from '../actions/cms.actions';
 
 interface CMSStateI {
-  cms: any;
+  cms: any[];
   loading: boolean;
   error?: string;
 }
 
 const initialState: CMSStateI = {
-  cms: {},
+  cms: data,
   loading: false,
   error: undefined,
 };
@@ -35,7 +36,8 @@ export const cmsReducer = (
       return {
         ...state,
         loading: false,
-        cms: action.payload?.data,
+        error: undefined,
+        cms: action.payload?.data?.data,
       };
     }
 

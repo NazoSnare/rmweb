@@ -33,7 +33,7 @@ export const GetCMS = () => async (dispatch: Dispatch<CMSActionTypes>) => {
     });
 
     const response = await axios.get(
-      `http://localhost:3001/api/v1/cms?order=dbfae`,
+      `http://localhost:3001/api/v1/cms?order=tdbfae`,
     );
 
     dispatch({
