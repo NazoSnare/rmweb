@@ -18,9 +18,6 @@ const LandingPage: React.FC = () => {
   const cmsState = useSelector((state: RootStore) => state.cms);
   const dispatch = useDispatch();
 
-  /**
-   * No dependcy so that it always fetches the latest layout
-   */
   useEffect(() => {
     dispatch(GetCMS());
   }, []);
