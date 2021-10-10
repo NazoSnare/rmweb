@@ -23,7 +23,7 @@ const LandingPage: React.FC = () => {
    */
   useEffect(() => {
     dispatch(GetCMS());
-  });
+  }, []);
 
   return (
     <Page>
