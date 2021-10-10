@@ -6,9 +6,7 @@ const allComponents: any = {
 };
 
 const createComponent = (componentMeta: any) => {
-  console.log(componentMeta);
   if (allComponents[componentMeta.component]) {
-    console.log(allComponents[componentMeta.component]);
     const newElement = React.createElement(
       allComponents[componentMeta.component],
       {
@@ -17,11 +15,7 @@ const createComponent = (componentMeta: any) => {
       },
     );
 
-    console.log('created', newElement);
-
     return newElement;
-  } else {
-    console.log('not exist');
   }
 };
 
